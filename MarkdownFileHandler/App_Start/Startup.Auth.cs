@@ -111,8 +111,7 @@ namespace MarkdownFileHandler
                             context.ProtocolMessage.RedirectUri = appBaseUrl + "/";
                             context.ProtocolMessage.PostLogoutRedirectUri = appBaseUrl;
 
-                            FileHandlerActivationParameters fileHandlerActivation;
-                            if (FileHandlerController.IsFileHandlerActivationRequest(new HttpRequestWrapper(HttpContext.Current.Request), out fileHandlerActivation))
+                            if (FileHandlerController.IsFileHandlerActivationRequest(new HttpRequestWrapper(HttpContext.Current.Request), out FileHandlerActivationParameters fileHandlerActivation))
                             {
                                 // Add LoginHint and DomainHint if the request includes a form handler post
                                 context.ProtocolMessage.LoginHint = fileHandlerActivation.UserId;

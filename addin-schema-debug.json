@@ -6,7 +6,7 @@
       "properties": [
         {
           "key": "actions",
-          "value": "[{\"type\":\"custom\",\"displayName\":\"Add to ZIP file - debug\",\"url\":\"https://localhost:44362/filehandler/compressFiles\",\"availableOn\":{\"file\":{},\"folder\":{},\"allowMultiSelect\":true}}]"
+          "value": "[{\"type\":\"custom\",\"displayName\":\"Add to ZIP file - debug\",\"url\":\"https://demolitest001.azurewebsites.net/filehandler/compressFiles\",\"availableOn\":{\"file\":{},\"folder\":{},\"allowMultiSelect\":true}}]"
         },
         {
           "key": "version",
@@ -27,11 +27,11 @@
         },
         {
           "key": "fileTypeIconUrl",
-          "value": "https://localhost:44362/images/markdown.png"
+          "value": "https://demolitest001.azurewebsites.net/images/markdown.png"
         },
         {
           "key": "actions",
-          "value": "[{\"type\":\"newFile\",\"url\":\"https://localhost:44362/filehandler/newFile\",\"availableOn\":{\"file\":{\"extensions\":[\".md\"]}}},{\"type\":\"open\",\"url\":\"https://localhost:44362/filehandler/open\",\"availableOn\":{\"file\":{\"extensions\":[\".md\"]}}},{\"type\":\"preview\",\"url\":\"https://localhost:44362/filehandler/preview\",\"availableOn\":{\"file\":{\"extensions\":[\".md\"]}}}]"
+          "value": "[{\"type\":\"newFile\",\"url\":\"https://demolitest001.azurewebsites.net/filehandler/newFile\",\"availableOn\":{\"file\":{\"extensions\":[\".md\"]}}},{\"type\":\"open\",\"url\":\"https://demolitest001.azurewebsites.net/filehandler/open\",\"availableOn\":{\"file\":{\"extensions\":[\".md\"]}}},{\"type\":\"preview\",\"url\":\"https://demolitest001.azurewebsites.net/filehandler/preview\",\"availableOn\":{\"file\":{\"extensions\":[\".md\"]}}}]"
         }
       ]
     }

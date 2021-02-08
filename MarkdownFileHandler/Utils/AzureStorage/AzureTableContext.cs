@@ -34,7 +34,8 @@ namespace MarkdownFileHandler.Utils
     {
         private CloudStorageAccount StorageAccount
         {
-            get { return CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString")); }
+            get { return CloudStorageAccount.Parse(@"DefaultEndpointsProtocol=https;AccountName=storageaccountbksp8694;AccountKey=E/6gvRgcex4gUuX0foiEom84wRsB+t9CKOt0xjXV1sZJ+r3If0q/45vb0RimSS5sEX04sot0trVUl8YcHwQUaw==;BlobEndpoint=https://storageaccountbksp8694.blob.core.windows.net/;TableEndpoint=https://storageaccountbksp8694.table.core.windows.net/;QueueEndpoint=https://storageaccountbksp8694.queue.core.windows.net/;FileEndpoint=https://storageaccountbksp8694.file.core.windows.net/"); }
+
         }
 
         private readonly CloudTableClient client;

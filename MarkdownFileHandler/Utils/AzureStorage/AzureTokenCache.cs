@@ -33,7 +33,7 @@ namespace MarkdownFileHandler.Utils
     {
         public string User { get; set; }
 
-        private AzureTableContext tables = new AzureTableContext();
+        private readonly AzureTableContext tables = new AzureTableContext();
         TokenCacheEntity CachedEntity;
 
         public AzureTableTokenCache(string user)
@@ -44,7 +44,7 @@ namespace MarkdownFileHandler.Utils
             this.BeforeWrite = BeforeWriteNotification;
 
             CachedEntity = LoadPersistedCacheEntry();
-            this.Deserialize((CachedEntity == null) ? null : CachedEntity.CacheBits);
+            this.DeserializeAdalV3(CachedEntity?.CacheBits);
         }
 
         public override void Clear()
@@ -96,12 +96,12 @@ namespace MarkdownFileHandler.Utils
             if (null != CachedEntity)
             {
                 System.Diagnostics.Debug.WriteLine($"BeforeAccessNotification for {User} - Deserialize cached entity");
-                this.Deserialize(CachedEntity.CacheBits);
+                this.DeserializeAdalV3(CachedEntity.CacheBits);
             }
             else
             {
                 System.Diagnostics.Debug.WriteLine($"BeforeAccessNotification for {User} - No cached entry exists");
-                this.Deserialize(null);
+                this.DeserializeAdalV3(null);
             }
         }
 
@@ -116,7 +116,7 @@ namespace MarkdownFileHandler.Utils
                     CachedEntity = new TokenCacheEntity();
                 }
                 CachedEntity.RowKey = User;
-                CachedEntity.CacheBits = this.Serialize();
+                CachedEntity.CacheBits = this.SerializeAdalV3();
                 CachedEntity.LastWrite = DateTime.Now;
 
                 TableOperation insert = TableOperation.InsertOrReplace(CachedEntity);
